@@ -1,6 +1,6 @@
 package com.java.example;
 
-public class Student {
+public class Student implements Comparable<Student> {
 	String name;
 
 	int id;
@@ -35,5 +35,11 @@ public class Student {
 	@Override
 	public String toString() {
 		return name + "-" + id + "-" + subject + "-" + percentage;
+	}
+
+	@Override
+	public int compareTo(Student o) {
+		//return this.name.compareTo(o.getName());
+      return this.id-o.getId();
 	}
 }
